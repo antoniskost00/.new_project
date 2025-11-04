@@ -3,7 +3,7 @@ module tape {
 }
 clock {
 	starttime "2022-01-01 00:00:00 PST";
-	stoptime "2022-02-01 00:00:00 PST"
+	stoptime "2022-02-01 00:00:00 PST";
 }
 schedule test{
 	* 9-17 * * 1-5 1.0;
