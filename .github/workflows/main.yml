@@ -10,9 +10,23 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: lfenergy/arras:develop
-    
+
     steps:
+
     - uses: actions/checkout@v3
 
     - name: Run simulation
-      run: gridlabd main.glm
+      run: |
+        gridlabd main.glm
+        echo "Simulation finished."
+
+
+
+    - name: Upload simulation results
+      uses: actions/upload-artifact@v4
+      with:
+        name: simulation-results
+        path: |
+          *.csv
+          *.txt
+          output/
