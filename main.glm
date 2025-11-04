@@ -2,7 +2,6 @@ module tape {
 	csv_header_type NAME;
 }
 clock {
-	timezone US/CA/Los Angeles;
 	starttime "2022-01-01 00:00:00 PST";
 	stoptime "2022-02-01 00:00:00 PST"
 }
