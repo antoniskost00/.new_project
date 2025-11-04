@@ -22,11 +22,3 @@ jobs:
 
 
 
-    - name: Upload simulation results
-      uses: actions/upload-artifact@v4
-      with:
-        name: simulation-results
-        path: |
-          *.csv
-          *.txt
-          output/
