@@ -1,27 +1,16 @@
-module tape {
-	csv_header_type NAME;
+// Examples:1b.glm 
+clock 
+{
+  starttime '2000-01-01 00:00:00 UTC';
+  stoptime '2001-01-01 00:00:00 UTC'; 
 }
-clock {
-	starttime "2022-01-01 00:00:00 PST";
-	stoptime "2022-02-01 00:00:00 PST";
-}
-schedule test{
-	* 9-17 * * 1-5 1.0;
-	* 9-17 * * 6 0.5;
-	* 9-17 * * 0,7 0.0;
-	* 18-8 * * * 0.0;
-}
-class test {
-	double x;
-	double y;	
-}
-filter delay(z,60)=1/z;
-object test {
-	x test*1.0 +0.0;
-	y delay(x);
-	objict recorder {
-		property x,y;
-		file data.csv;
-		interval -1
-	};
+module residential;
+module tape;
+object house 
+{
+  object recorder 
+  {
+     property air_temperature; 
+     file temperature.csv;
+  }; 
 }
